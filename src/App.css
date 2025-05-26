@@ -80,12 +80,12 @@ p {
   width: 70%;
 }
 .sidebar-title {
-  font-size: 22px;
-  margin: 10px 0px;
+  font-size: 30px;
+  margin: 20px 0px 30px 0px;
   padding: 5px 0px;
 }
 .sidebar-title > span {
-  font-size: 22px;
+  font-size: 30px;
   color: rgb(10, 230, 230);
 }
 .sidebar-footer {
@@ -132,7 +132,7 @@ p {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .dashboard-title {
   font-size: 20px;
@@ -154,7 +154,7 @@ p {
   font-size: 10px;
 }
 .anatomy-status-container {
-  flex: 8;
+  flex: 4;
   display: flex;
   flex-direction: column;
 }
@@ -225,7 +225,7 @@ p {
   position: relative;
   width: 40px;
   height: 40px;
-  border: 2px solid rgb(55, 52, 169,0.6); /* lightblue */
+  border: 2px solid rgb(55, 52, 169, 0.6); /* lightblue */
   border-radius: 6px;
   overflow: hidden;
   background-color: transparent;
@@ -237,7 +237,7 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px solid rgb(55, 52, 169,0.6);
+  border: 2px solid rgb(55, 52, 169, 0.6);
   border-radius: 6px;
   pointer-events: none;
   animation: pulse 2s infinite ease-in-out;
@@ -265,7 +265,7 @@ p {
   height: 50%;
   background: linear-gradient(
     to bottom,
-    rgb(55, 52, 169,0.7),
+    rgb(55, 52, 169, 0.7),
     rgb(55, 52, 169, 0.5),
     transparent
   );
@@ -440,6 +440,10 @@ p {
   background-color: rgb(55, 52, 169);
   color: rgb(255, 255, 255);
 }
+.calendar-time.selected1 {
+  background-color: rgb(55, 52, 169,0.3);
+  color: rgb(255, 255, 255);
+}
 .schedules {
   display: flex;
   gap: 20px;
@@ -449,10 +453,14 @@ p {
 
 /* activity-feed start */
 .activity-feed {
-  background-color: #f8f9fc;
+  flex: 2;
+  background-color: rgba(173, 216, 230, 0.18);
   border-radius: 12px;
   padding: 16px 20px;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .activity-title-wrapper {
@@ -464,8 +472,7 @@ p {
 
 .activity-title {
   font-size: 16px;
-  font-weight: bold;
-  color: #111;
+  font-weight: 700 !important;
 }
 
 .activity-description {
@@ -477,12 +484,13 @@ p {
   display: flex;
   justify-content: space-center;
   align-items: flex-end;
-  height: 100px;
+  height: 45%;
 }
 
 .day-group {
   width: 100%;
   text-align: center;
+  height: 100%;
 }
 
 .bar-group {
@@ -490,7 +498,7 @@ p {
   gap: 3px;
   align-items: flex-end;
   justify-content: space-around;
-  height: 80px;
+  height: 100%;
 }
 
 .bar {
@@ -499,11 +507,14 @@ p {
   transition: height 0.3s ease;
 }
 
-.day-label {
+.ac-days {
   font-size: 10px;
-  color: #666;
+  color: rgb(0, 0, 0, 0.3);
   margin-top: 4px;
-  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
   text-align: center;
 }
 
@@ -521,6 +532,13 @@ p {
   display: flex;
   gap: 20px;
 }
+.schedule-day{
+  color: rgb(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px 0px;
+}
+
 /* upcoming-schedule end */
 
 /* appointment-card start */
@@ -550,5 +568,8 @@ p {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.appointment-icon {
+  font-size: 20px !important;
 }
 /* appointment-card end */

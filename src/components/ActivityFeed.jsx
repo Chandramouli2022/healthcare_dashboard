@@ -7,31 +7,34 @@ export default function ActivityFeed() {
     { day: "Fri", values: [10, 5, 4, 3] },
     { day: "Sat", values: [10, 5, 4, 3] },
     { day: "Sun", values: [10, 5, 4, 3] },
+    { day: "", values: [10, 5, 4, 3] },
   ];
   const arrRef = [10, 5, 4, 3];
   const heartData = [
-    { day: "Mon", values: [5, 2, 0, 0] },
-    { day: "Tue", values: [0, 0, 0, 1] },
-    { day: "Wed", values: [0, 0, 0, 0] },
-    { day: "Thu", values: [0, 3, 0, 0] },
-    { day: "Fri", values: [0, 1, 0, 0] },
-    { day: "Sat", values: [0, 0, 0, 0] },
+    { day: "Mon", values: [0, 5, 0, 0] },
+    { day: "Tue", values: [5, 0, 0, 3] },
+    { day: "Wed", values: [0, 0, 2, 0] },
+    { day: "Thu", values: [0, 5, 2, 0] },
+    { day: "Fri", values: [0, 0, 0, 0] },
+    { day: "Sat", values: [5, 5, 0, 0] },
     { day: "Sun", values: [0, 0, 2, 0] },
+    { day: "nMon", values: [0, 5, 0, 0] },
   ];
 
   const LegData = [
-    { day: "Mon", values: [5, 3, 0, 0] },
-    { day: "Tue", values: [0, 0, 0, 0] },
-    { day: "Wed", values: [4, 0, 0, 0] },
-    { day: "Thu", values: [0, 2, 0, 0] },
-    { day: "Fri", values: [0, 4, 0, 0] },
-    { day: "Sat", values: [0, 0, 0, 0] },
-    { day: "Sun", values: [0, 0, 0, 3] },
+    { day: "Mon", values: [0, 0, 0, 0] },
+    { day: "Tue", values: [5, 5, 0, 0] },
+    { day: "Wed", values: [0, 0, 2, 3] },
+    { day: "Thu", values: [0, 0, 2, 0] },
+    { day: "Fri", values: [0, 5, 0, 0] },
+    { day: "Sat", values: [5, 0, 0, 3] },
+    { day: "Sun", values: [0, 0, 2, 3] },
+    { day: "nMon", values: [0, 0, 0, 3] },
   ];
 
   const organConfigs = [
-    { name: "heart", data: heartData, color: "lightgreen" },
-    { name: "leg", data: LegData, color: "darkblue" },
+    { name: "leg", data: LegData, color: "rgb(55, 52, 169,0.8)" },
+    { name: "heart", data: heartData, color: "rgb(0,255,255,0.8)" },
     {
       name: "lungs",
       data: typeof lungsData !== "undefined" ? lungsData : null,
@@ -43,7 +46,7 @@ export default function ActivityFeed() {
       color: "purple",
     },
   ].filter((organ) => organ.data);
-
+  const daysName = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
   const heightDiff = ["0px", "20px", "15px", "5px"];
   const maxVal = Math.max(...activityData.flatMap((day) => day.values));
   const barColors = ["#D3D3D3", "#D3D3D3", "#D3D3D3", "#D3D3D3"];
@@ -107,8 +110,14 @@ export default function ActivityFeed() {
                 );
               })}
             </div>
-            <span className='day-label'>{day.day}</span>
           </div>
+        ))}
+      </div>
+      <div className='ac-days'>
+        {daysName.map((d) => (
+          <span key={d} className='day-label'>
+            {d}
+          </span>
         ))}
       </div>
     </section>

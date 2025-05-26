@@ -2,12 +2,12 @@ import SimpleAppointmentCard from "./SimpleAppointmentCard";
 
 export default function UpcomingSchedule() {
   const upcomingSchedule = [
-    ["Dentist", "Ts", "09:00-11:00"],
-    ["Physiotherapy appointment", "Ts", "11:00-12:00"],
+    ["Health Checkup Complete", " 💉", "11:00 AM"],
+    ["Ophthalmologist", "👁️", "14:00 PM"],
   ];
   const upcomingScheduleNext = [
-    ["Dentist", "Ts", "09:00-11:00"],
-    ["Physiotherapy appointment", "Ts", "11:00-12:00"],
+    ["Cardiologist", "❤️", "12:00 AM"],
+    ["Neurologist", "👨‍⚕️", "16:00 PM"],
   ];
   return (
     <section className='upcoming-schedule'>

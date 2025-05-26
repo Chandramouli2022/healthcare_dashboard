@@ -11,14 +11,14 @@ export default function CalendarView() {
       { time: "12:00", selected: false },
       { time: "10:00", selected: false },
       { time: "----", selected: false },
-      { time: "12:00", selected: false },
-      { time: "09:00", selected: false },
+      { time: "12:00", selected: true },
+      { time: "09:00", selected: true },
     ],
     [
       { time: "11:00", selected: false },
       { time: "09:00", selected: true },
       { time: "---", selected: false },
-      { time: "11:00", selected: false },
+      { time: "11:00", selected: true },
       { time: "14:00", selected: false },
       { time: "14:00", selected: false },
       { time: "10:00", selected: false },
@@ -34,17 +34,27 @@ export default function CalendarView() {
     ],
   ];
 
+
   const todaySchedule = [
-    ["Dentist", "Ts", "09:00-11:00", "Dr. chameleon kumar rao", true],
+    ["Dentist", "🦷", "09:00-11:00", "Dr. chameleon kumar rao", true],
     [
       "Physiotherapy appointment",
-      "Ts",
+      "💪",
       "11:00-12:00",
       "Dr. AB Deviliers",
       false,
     ],
   ];
   const selectedDayIndex = 1;
+
+  function checkSelection(selected,i) {
+    if (selected && i === selectedDayIndex) {
+      return "selected";
+    }
+    if (selected) {
+      return "selected1";
+    }
+  }
 
   return (
     <section className='calendar-view'>
@@ -85,7 +95,7 @@ export default function CalendarView() {
           row.map((entry, i) => (
             <div
               key={`${rowIndex}-${i}`}
-              className={`calendar-time ${entry.selected ? "selected" : ""}`}
+              className={`calendar-time ${checkSelection(entry.selected,i)}`}
             >
               {entry.time}
             </div>

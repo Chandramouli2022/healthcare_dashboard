@@ -29,7 +29,7 @@ export default function AnatomySection() {
         camera-controls
         environment-image='neutral'
         exposure='1'
-        shadow-intensity='2'
+        shadow-intensity='0'
         interaction-prompt='none'
         disable-zoom
         style={{ width: "100%", height: "100%" }}
