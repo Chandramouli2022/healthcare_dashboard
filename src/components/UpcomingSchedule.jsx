@@ -12,6 +12,7 @@ export default function UpcomingSchedule() {
   return (
     <section className='upcoming-schedule'>
       <h3>The Upcoming Schedule</h3>
+      <div className='schedule-day'>On Thursday</div>
       <div className='schedules'>
         {upcomingSchedule.map((item, idx) => (
           <SimpleAppointmentCard
@@ -19,16 +20,17 @@ export default function UpcomingSchedule() {
             subject={item[0]}
             icon={item[1]}
             time={item[2]}
-            docName={item[3]}
           />
         ))}
+      </div>
+      <div className='schedule-day'>On Saturday</div>
+      <div className='schedules'>
         {upcomingScheduleNext.map((item, idx) => (
           <SimpleAppointmentCard
             key={idx}
             subject={item[0]}
             icon={item[1]}
             time={item[2]}
-            docName={item[3]}
           />
         ))}
       </div>

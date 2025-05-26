@@ -1,6 +1,6 @@
-export default function SimpleAppointmentCard({subject, icon, time, docName}) {
+export default function SimpleAppointmentCard({subject, icon, time, docName, selected}) {
   return (
-    <div className='appointment-card'>
+    <div className={`appointment-card ${selected ? "selected" : ""}`}>
       <div className='appointment-header'>
         <div className='appointment-subject'>{subject}</div>
         <span className='appointment-icon'>{icon}</span>
