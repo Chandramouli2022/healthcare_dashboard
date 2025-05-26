@@ -37,25 +37,30 @@ export default function AnatomySection() {
         <div
           className='anatomy-label qr-scanner'
           slot='hotspot-heart'
-          data-position='2.5 3.5 0'
+          data-position='3.5 3.5 0'
           data-normal='0 0 1'
         >
           <div className='scanner-row'>
             <div className='scanner-box'>
               <div className='scan-line'></div>
             </div>
-            <span className='label-text'>Healthy Heart</span>
+            <span className='label-text'>❤️ Healthy Heart</span>
           </div>
         </div>
 
         <div
           className='anatomy-label qr-scanner'
           slot='hotspot-leg'
-          data-position='-2.5 -3.2 0'
+          data-position='-3.3 -3.2 0'
           data-normal='0 0 1'
         >
           <div className='scanner-row'>
-            <span className='label-text'>Healthy Leg</span>
+            <span
+              className='label-text'
+              style={{ color: "rgb(55, 52, 169)", background: "cyan" }}
+            >
+              🦵 Healthy Leg
+            </span>
             <div className='scanner-box'>
               <div className='scan-line'></div>
             </div>

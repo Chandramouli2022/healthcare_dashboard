@@ -1,7 +1,6 @@
 h1,
 h2,
 h3,
-span,
 p {
   margin: 0;
   padding: 0;
@@ -19,7 +18,6 @@ p {
 /* header-container start */
 .header-container {
   flex: 1;
-  border: 1px dashed #ff0000;
   width: 100%;
   display: flex;
   align-items: center;
@@ -34,9 +32,10 @@ p {
 .searchbar {
   width: 100%;
   padding: 8px 40px; /* space for icons */
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: rgba(173, 216, 230, 0.18);
 }
 
 .icon-left,
@@ -105,7 +104,7 @@ p {
   height: 20px;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.3);
-  font-weight: 550 !important;
+  font-weight: 500 !important;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -130,13 +129,30 @@ p {
 }
 
 .dashboard-left {
-  border-right: 1px dashed #000;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-
+.dashboard-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.dashboard-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+.dashboard-title-wrapper > span {
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.down-tip {
+  font-size: 10px;
+}
 .anatomy-status-container {
   flex: 8;
   display: flex;
@@ -149,21 +165,28 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
 }
 .anatomy-right {
-  border: 1px dashed #000;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .anatomy-left {
-  border: 1px dashed red;
   flex: 2;
   height: 100%;
 }
-
+.nav-details {
+  font-size: 12px;
+  font-weight: 550;
+  text-align: right;
+  cursor: pointer;
+}
+.right-arrow-d {
+  font-size: 12px;
+  font-weight: 850;
+  margin: 0px 10px 0px 0px;
+}
 .dashboard-right {
   flex: 1;
   display: flex;
@@ -177,12 +200,14 @@ p {
 
 /* anatomy-section start */
 .anatomy-section {
-  border: 1px dashed green;
   height: 100%;
 }
 
 .anatomy-display {
+  background-color: rgba(173, 216, 230, 0.18);
+  border-radius: 16px;
   height: 100%;
+  margin: 0px 10px;
 }
 .qr-scanner {
   position: relative;
@@ -200,7 +225,7 @@ p {
   position: relative;
   width: 40px;
   height: 40px;
-  border: 2px solid rgba(173, 216, 230, 0.7); /* lightblue */
+  border: 2px solid rgb(55, 52, 169,0.6); /* lightblue */
   border-radius: 6px;
   overflow: hidden;
   background-color: transparent;
@@ -212,7 +237,7 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  border: 2px solid lightblue;
+  border: 2px solid rgb(55, 52, 169,0.6);
   border-radius: 6px;
   pointer-events: none;
   animation: pulse 2s infinite ease-in-out;
@@ -237,59 +262,82 @@ p {
   left: 0;
   height: 2px;
   width: 100%;
-  background: linear-gradient(to right, lightblue, white, lightblue);
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgb(55, 52, 169,0.7),
+    rgb(55, 52, 169, 0.5),
+    transparent
+  );
   animation: scan 2.5s infinite linear;
 }
 
 @keyframes scan {
   0% {
-    top: 0%;
+    top: 100%;
   }
   100% {
-    top: 100%;
+    top: 0%;
   }
 }
 
 /* Label Text */
 .label-text {
-  color: lightblue;
-  font-size: 13px;
-  font-weight: 500;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 600;
   white-space: nowrap;
-  background: transparent;
+  background: rgb(55, 52, 169);
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* anatomy-section end */
 
 /* health-status-cards start */
 .health-status-cards {
-  border: 1px solid #ccc;
   border-radius: 10px;
   background-color: #f8f8f8;
   font-family: sans-serif;
   margin: 10px;
-  padding: 10px 10px 20px 10px;
+  padding: 5px 5px 10px 5px;
+  background-color: rgba(173, 216, 230, 0.2);
+}
+.health-status-cards > * {
+  margin: 8px 0px;
+}
+.health-card-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
 }
 
-.health-card-title {
-  margin: 10px;
-  font-size: 14px;
-  color: #222;
-  margin-bottom: 4px;
+.health-card-title > span {
+  margin: 5px;
+  font-size: 32px;
 }
 
 .health-card-date {
-  font-size: 12px;
+  margin-left: 10px;
+  font-size: 10px;
   color: #666;
 }
 
 .health-card-bar {
-  width: 100%;
+  margin: auto;
+  width: 90%;
   height: 6px;
   background: linear-gradient(to right, lightblue 70%, #ddd 70%);
   border-radius: 4px;
 }
 
+.health-card-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
 /* health-status-cards end */
 
 /* calendar-view start */
