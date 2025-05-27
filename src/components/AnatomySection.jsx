@@ -32,7 +32,7 @@ export default function AnatomySection() {
         shadow-intensity='0'
         interaction-prompt='none'
         disable-zoom
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "70%" }}
         className='anatomy-model'
       >
         <div
