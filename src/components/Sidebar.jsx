@@ -7,13 +7,15 @@ import chatIcon from "../assets/message.svg";
 import supportIcon from "../assets/call.svg";
 import settingsIcon from "../assets/settings.svg";
 
-export default function Sidebar() {
+export default function Sidebar({ mobileMenuOpen , toggleMobileMenu}) {
   return (
-    <aside className='sidebar'>
+    <aside className={`sidebar ${mobileMenuOpen ? "open" : ""}`}>
+      <div className='mobile-menu close-icon' onClick={toggleMobileMenu}>&times;</div>
       <div className='sidebar-main'>
         <h2 className='sidebar-title'>
           <span>Health</span>care.
         </h2>
+
         <div className='sidebar-groups'>
           <p className='sidebar-group-title'>General</p>
           <div className='sidebar-item selected'>

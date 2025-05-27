@@ -63,6 +63,10 @@ p {
   object-fit: contain;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 /* header-container end */
 
 /* sidebar start */
@@ -559,7 +563,6 @@ p {
   justify-content: space-around;
   padding: 16px;
   height: 100%;
-  border: 1px dashed black;
 }
 .upcoming-schedule > h3 {
   font-size: 16px;
@@ -611,31 +614,69 @@ p {
   font-size: 20px !important;
 }
 /* appointment-card end */
-
-section {
-  outline: 1px solid red;
+main {
+  border: 1px dashed red;
 }
-
 @media (max-width: 700px) {
   .app-layout {
     flex-direction: column;
     width: 100%;
-
+    margin: 0px;
+    border: 1px dashed black;
   }
 
   .sidebar {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 20px;
-    display: none;
+    position: fixed; /* Stay fixed to the left */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: white; /* or your theme color */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-130%); /* Hide off-screen to the left */
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  .mobile-menu {
+    display: inline-block; /* Show the mobile menu icon */
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .close-icon {
+    background-color: rgb(55, 52, 169);
+    border-radius: 50%;
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* When open */
+  .sidebar.open {
+    transform: translateX(0); /* Slide into view */
   }
 
   .dashboard-main {
     flex-direction: column;
+    width: 100%;
+    margin: 0px;
   }
 
+  .header-container {
+    margin-top: 10px;
+  }
+  .activity-feed {
+    margin: 10px;
+  }
   .dashboard-right {
     margin-left: 0;
+    margin: 10px;
     margin-top: 20px;
   }
 
@@ -643,5 +684,8 @@ section {
     height: 60% !important;
     margin: 30% 0px 0px -10px;
   }
-
+  .schedules {
+    display: flex;
+    flex-direction: column;
+  }
 }

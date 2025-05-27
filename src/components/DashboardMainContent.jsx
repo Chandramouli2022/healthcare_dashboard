@@ -5,7 +5,7 @@ import CalendarView from "./CalendarView";
 import ActivityFeed from "./ActivityFeed";
 import UpcomingSchedule from "./UpcomingSchedule";
 
-export default function DashboardMainContent() {
+export default function DashboardMainContent({ toggleMobileMenu }) {
   const healthStatus = [
     {
       icon: "🫁",
@@ -32,7 +32,7 @@ export default function DashboardMainContent() {
   return (
     <main className='dashboard-main'>
       <div className='dashboard-left'>
-        <Header />
+        <Header toggleMobileMenu={toggleMobileMenu}/>
         <div className='anatomy-status-container'>
           <div className='dashboard-title-wrapper'>
             <h3 className='dashboard-title'>Dashboard</h3>
