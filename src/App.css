@@ -616,7 +616,7 @@ section {
   outline: 1px solid red;
 }
 
-@media (max-width: 412px) {
+@media (max-width: 700px) {
   .app-layout {
     flex-direction: column;
     width: 100%;
