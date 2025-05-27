@@ -632,13 +632,11 @@ section {
 
   .dashboard-main {
     flex-direction: column;
-    width: 100%;
   }
 
   .dashboard-right {
     margin-left: 0;
     margin-top: 20px;
-    width: 100%;
   }
 
   .anatomy-model {
