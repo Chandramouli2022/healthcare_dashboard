@@ -1,0 +1,23 @@
+.upcoming-schedule {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 16px;
+  height: 100%;
+}
+.upcoming-schedule > h3 {
+  font-size: 16px;
+  font-weight: 700 !important;
+  margin-left: 5px;
+}
+.schedules {
+  display: flex;
+  gap: 20px;
+}
+.schedule-day {
+  color: rgb(0, 0, 0, 0.3);
+  font-weight: 600;
+  font-size: 14px;
+  margin: 5px 5px;
+}

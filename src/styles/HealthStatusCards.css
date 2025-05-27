@@ -1,0 +1,43 @@
+.health-status-cards {
+  border-radius: 10px;
+  background-color: #f8f8f8;
+  font-family: sans-serif;
+  margin: 10px;
+  padding: 5px 5px 10px 5px;
+  background-color: rgba(173, 216, 230, 0.2);
+}
+.health-status-cards > * {
+  margin: 8px 0px;
+}
+.health-card-title {
+  font-size: 14px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.health-card-title > span {
+  margin: 5px;
+  font-size: 32px;
+}
+
+.health-card-date {
+  margin-left: 10px;
+  font-size: 10px;
+  color: #666;
+}
+
+.health-card-bar {
+  margin: auto;
+  width: 90%;
+  height: 6px;
+  background: linear-gradient(to right, lightblue 70%, #ddd 70%);
+  border-radius: 4px;
+}
+
+.health-card-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}

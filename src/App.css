@@ -312,8 +312,14 @@ p {
   white-space: normal; /* ← Allow wrapping */
   overflow-wrap: break-word; /* ← Break long words */
   max-width: 120px; /* ← Prevent overflow */
+  position: absolute;
+  left: 45px; /* Adjust as needed */
+  right: -145px; /* Adjust as needed */
 }
-
+.label-text.leg {
+  left: -142px;
+  right: 0px;
+}
 /* anatomy-section end */
 
 /* health-status-cards start */
@@ -668,6 +674,9 @@ p {
     width: 100%;
     margin: 0px;
   }
+  .anatomy-model {
+    height: 70% !important;
+  }
 
   .header-container {
     margin-top: 10px;
@@ -680,9 +689,7 @@ p {
     margin: 10px;
     margin-top: 20px;
   }
-  .anatomy-model {
-    margin: 30% 0px 0px -10px;
-  }
+
   .schedules {
     display: flex;
     flex-direction: column;
@@ -704,10 +711,123 @@ p {
     border-radius: 10px;
     font-size: 9px;
   }
+  .label-text {
+    font-size: 7px;
+    padding: 4px;
+  }
+  .label-text {
+    left: 25px;
+    right: -65px;
+  }
+  .label-text.leg {
+    left: -60px;
+    right: 25px;
+  }
+  .scanner-box {
+    width: 24px;
+    height: 24px;
+  }
 }
 
-@media (max-width: 620px) and (min-width: 420px) {
+@media (max-width: 900px) and (min-width: 420px) {
   /* Your responsive styles here */
+
+  .app-layout {
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .sidebar {
+    position: fixed; /* Stay fixed to the left */
+    top: 0;
+    left: 0;
+    height: 88vh;
+    width: 250px;
+    background-color: white; /* or your theme color */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-130%); /* Hide off-screen to the left */
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  .mobile-menu {
+    display: inline-block; /* Show the mobile menu icon */
+    margin-left: 15px;
+    cursor: pointer;
+  }
+
+  .close-icon {
+    background-color: rgb(55, 52, 169);
+    border-radius: 50%;
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  /* When open */
+  .sidebar.open {
+    transform: translateX(0); /* Slide into view */
+  }
+
+  .dashboard-main {
+    flex-direction: column;
+    width: 100%;
+    margin: 0px;
+  }
+  .anatomy-model {
+    height: 70% !important;
+  }
+
+  .header-container {
+    margin-top: 10px;
+  }
+  .activity-feed {
+    margin: 10px;
+  }
+  .dashboard-right {
+    margin-left: 0;
+    margin: 10px;
+    margin-top: 20px;
+  }
+  .calendar-view {
+    padding: 16px;
+  }
+  .calendar-grid {
+    padding: -10px;
+    gap: 0px;
+    margin-left: 2px;
+  }
+  .calendar-day,
+  .calendar-date,
+  .calendar-time {
+    z-index: 1;
+    padding: 6px 4px;
+    margin: 0px 0px;
+    border-radius: 10px;
+    font-size: 9px;
+  }
+  .label-text {
+    font-size: 7px;
+    padding: 4px;
+  }
+  .label-text {
+    left: 25px;
+    right: -65px;
+  }
+  .label-text.leg {
+    left: -60px;
+    right: 25px;
+  }
+  .scanner-box {
+    width: 24px;
+    height: 24px;
+  }
 
   .sidebar-title,
   .sidebar-title > span {
@@ -765,7 +885,7 @@ p {
   }
 }
 
-@media (max-width: 1200px) and (min-width: 620px) {
+@media (max-width: 1200px) and (min-width: 900px) {
   /* Your responsive styles here */
 
   .sidebar-title,
@@ -821,5 +941,21 @@ p {
   }
   .appointment-icon {
     font-size: 16px !important;
+  }
+  .label-text {
+    font-size: 10px;
+    padding: 4px;
+  }
+  .label-text {
+    left: 30px;
+    right: -95px;
+  }
+  .label-text.leg {
+    left: -90px;
+    right: 30px;
+  }
+  .scanner-box {
+    width: 24px;
+    height: 24px;
   }
 }

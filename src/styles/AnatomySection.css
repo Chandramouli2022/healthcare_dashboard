@@ -1,0 +1,112 @@
+.anatomy-section {
+  height: 100%;
+}
+
+.anatomy-display {
+  background-color: rgba(173, 216, 230, 0.18);
+  border-radius: 16px;
+  height: 100%;
+  margin: 0px 10px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.anatomy-model {
+  overflow: visible;
+}
+.qr-scanner {
+  position: relative;
+  z-index: 2;
+}
+
+.scanner-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  flex-wrap: wrap; /* ← Allow wrapping on smaller screens */
+}
+
+/* SCANNER BOX */
+.scanner-box {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgb(55, 52, 169, 0.6); /* lightblue */
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+/* Glow effect */
+.scanner-box::before,
+.scanner-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgb(55, 52, 169, 0.6);
+  border-radius: 6px;
+  pointer-events: none;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Scan Line */
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgb(55, 52, 169, 0.7),
+    rgb(55, 52, 169, 0.5),
+    transparent
+  );
+  animation: scan 2.5s infinite linear;
+}
+
+@keyframes scan {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+/* Label Text */
+.label-text {
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgb(55, 52, 169);
+  padding: 10px;
+  border-radius: 10px;
+  white-space: normal; /* ← Allow wrapping */
+  overflow-wrap: break-word; /* ← Break long words */
+  max-width: 120px; /* ← Prevent overflow */
+  position: absolute;
+  left: 45px; /* Adjust as needed */
+  right: -145px; /* Adjust as needed */
+}
+.label-text.leg {
+  left: -142px;
+  right: 0px;
+}

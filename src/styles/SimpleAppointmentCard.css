@@ -1,0 +1,30 @@
+.appointment-card {
+  background-color: rgb(221 226 249);
+  border-radius: 20px;
+  margin: 4px;
+  padding: 4px 10px;
+  font-size: 14px;
+}
+.appointment-card.selected {
+  background-color: rgb(55, 52, 169);
+  color: rgb(255, 255, 255);
+}
+.appointment-subject {
+  font-weight: 600;
+  margin: 6px 0px;
+  margin-right: 30px;
+}
+.appointment-card > * {
+  margin: 3px;
+  padding: 3px;
+  font-weight: 300;
+}
+.appointment-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.appointment-icon {
+  font-size: 20px !important;
+}
