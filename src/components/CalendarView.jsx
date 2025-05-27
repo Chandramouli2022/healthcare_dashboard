@@ -34,7 +34,6 @@ export default function CalendarView() {
     ],
   ];
 
-
   const todaySchedule = [
     ["Dentist", "🦷", "09:00-11:00", "Dr. chameleon kumar rao", true],
     [
@@ -47,7 +46,7 @@ export default function CalendarView() {
   ];
   const selectedDayIndex = 1;
 
-  function checkSelection(selected,i) {
+  function checkSelection(selected, i) {
     if (selected && i === selectedDayIndex) {
       return "selected";
     }
@@ -76,31 +75,28 @@ export default function CalendarView() {
       </div>
 
       <div className='calendar-grid'>
-        {days.map((day,index) => (
-          <div key={day} className='calendar-day'>
-            <div
-              className={`${index === selectedDayIndex ? "highlight" : ""}`}
-            ></div>
-            {day}
+        {days.map((day, index) => (
+          <div
+            key={day}
+            className={`calendar-column ${
+              index === selectedDayIndex ? "highlight" : ""
+            }`}
+          >
+            <div className='calendar-day'>{day}</div>
+            <div className='calendar-date'>{dates[index]}</div>
+            {times.map((row, rowIndex) => (
+              <div
+                key={`${rowIndex}-${index}`}
+                className={`calendar-time ${checkSelection(
+                  row[index].selected,
+                  index
+                )}`}
+              >
+                {row[index].time}
+              </div>
+            ))}
           </div>
         ))}
-
-        {dates.map((date) => (
-          <div key={date} className='calendar-date'>
-            {date}
-          </div>
-        ))}
-
-        {times.map((row, rowIndex) =>
-          row.map((entry, i) => (
-            <div
-              key={`${rowIndex}-${i}`}
-              className={`calendar-time ${checkSelection(entry.selected,i)}`}
-            >
-              {entry.time}
-            </div>
-          ))
-        )}
       </div>
       <div className='schedules'>
         {todaySchedule.map((item, idx) => (

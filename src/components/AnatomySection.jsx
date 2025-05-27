@@ -21,7 +21,7 @@ export default function AnatomySection() {
   }, []);
 
   return (
-    <div className='anatomy-display' style={{ height: "100%" }}>
+    <div className='anatomy-display' style={{ width: "100%", height: "100%" }}>
       <model-viewer
         ref={viewerRef}
         src={humanMuscle}
@@ -33,6 +33,7 @@ export default function AnatomySection() {
         interaction-prompt='none'
         disable-zoom
         style={{ width: "100%", height: "100%" }}
+        className='anatomy-model'
       >
         <div
           className='anatomy-label qr-scanner'
