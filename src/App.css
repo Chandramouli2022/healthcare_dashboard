@@ -626,7 +626,7 @@ p {
     position: fixed; /* Stay fixed to the left */
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 90vh;
     width: 250px;
     background-color: white; /* or your theme color */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -685,7 +685,7 @@ p {
     flex-direction: column;
   }
   .calendar-view {
-    padding: 0px;
+    padding: 10px;
   }
   .calendar-grid {
     gap: 0px;
@@ -698,6 +698,6 @@ p {
     padding: 6px 4px;
     margin: 0px 0px;
     border-radius: 10px;
-    font-size: 10px;
+    font-size: 9px;
   }
 }
